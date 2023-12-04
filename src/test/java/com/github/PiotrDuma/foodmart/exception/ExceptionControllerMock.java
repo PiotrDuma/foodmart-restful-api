@@ -9,7 +9,7 @@ import org.springframework.web.servlet.NoHandlerFoundException;
 public class ExceptionControllerMock {
 
   @RequestMapping("/test/path")
-  public void callPathNotFound() throws NoHandlerFoundException{
+  public void callPathNotFoundException() throws Exception{
     throw new NoHandlerFoundException("GET", "localhost:8080/path", HttpHeaders.EMPTY);
   }
 
@@ -19,7 +19,7 @@ public class ExceptionControllerMock {
   }
 
   @RequestMapping("/test/resource")
-  public void callResourceNotFound() throws ResourceNotFoundException{
+  public void callResourceNotFoundException() throws RuntimeException{
     throw new ResourceNotFoundException("Something is not found");
   }
 }
